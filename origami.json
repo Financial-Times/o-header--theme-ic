@@ -12,14 +12,15 @@
 		},
 		"demosDefaults": {
 			"sass": "demos/src/demo.scss",
-			"documentClasses": "",
+			"documentClasses": "core",
 			"dependencies": ""
 		},
 		"demos": [
 			{
-				"name": "demo",
+				"name": "header",
 				"js": "demos/src/demo.js",
-				"template": "demos/src/demo.mustache",
+				"data": "demos/src/mainMenu.js",
+				"template": "demos/src/header.mustache",
 				"description": "Responsive header for the Investor's Chronicle."
 			}
 		]
