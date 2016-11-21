@@ -1,14 +1,14 @@
 {
-		"description": "Component description",
-		"keywords": "component, keywords, for, the, registry, search",
+		"description": "The Investors Chronicle header. This component is a theme for o-header.",
+		"keywords": "theme, investors, chronicle, ic, header, o-header",
 		"origamiType": "module",
 		"origamiCategory": "components",
 		"origamiVersion": 1,
-		"support": "https://github.com/Financial-Times/o-component-boilerplate/issues",
+		"support": "https://github.com/Financial-Times/o-header--theme-ic/issues",
 		"supportStatus": "active",
 		"browserFeatures": {},
 		"ci": {
-			"circle": "https://circleci.com/api/v1/project/Financial-Times/o-component-boilerplate"
+			"circle": "https://circleci.com/api/v1/project/Financial-Times/o-header--theme-ic"
 		},
 		"demosDefaults": {
 			"sass": "demos/src/demo.scss",
@@ -20,14 +20,7 @@
 				"name": "demo",
 				"js": "demos/src/demo.js",
 				"template": "demos/src/demo.mustache",
-				"description": "Description of the demo"
-			},
-			{
-				"name": "pa11y",
-				"js": "demos/src/demo.js",
-				"template": "demos/src/pa11y.mustache",
-				"hidden": true,
-				"description": "Accessibility test will be run against this demo"
+				"description": "Responsive header for the Investor's Chronicle."
 			}
 		]
 	}
