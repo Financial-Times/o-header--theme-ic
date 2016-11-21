@@ -56,29 +56,27 @@
 				{{#desktop}}
 					<li class="o-header__nav-item">
 						<a class="o-header__nav-link o-header__nav-link--primary" href="{{href}}" aria-selected="{{selected}}" id="o-header-link-{{index}}" {{#hasMega}}aria-controls="o-header-mega-{{index}}"{{/hasMega}}>{{name}}</a>
-						<!-- {% if section.children is defined %}
-							<div class="o-header__mega" id="o-header-mega-1" role="group" aria-labelledby="o-header-link-{{ loop.index }}" data-o-header-mega="{{ loop.index }}">
+						{{#hasMega}}
+
+							<div class="o-header__mega" id="o-header-mega-{{index}}" role="group" aria-labelledby="o-header-link-{{index}}" data-o-header-mega="{{index}}">
 								<div class="o-header__container o-header__container--mega">
 									<div class="o-header__mega-wrapper">
 										<div class="o-header__mega-column o-header__mega-column--subsections">
 											<div class="o-header__mega-content">
-													{% for subsection_name, subsection in section.children %}
-														{% if loop.index == 1 %}
-															<a class="o-header__mega-link o-header__mega-link--large" href="{{ subsection.link }}" aria-selected="">{{ subsection_name }}</a>
-															<ul class="o-header__mega-list">
-														{% else %}
-															<li class="o-header__mega-item">
-																<a class="o-header__mega-link" href="{{ subsection.link }}" aria-selected="">{{ subsection_name }}</a>
-															</li>
-														{% endif %}
-													{% endfor %}
+												<ul>
+														{{#children}}
+																<li class="o-header__mega-item">
+																	<a class="o-header__mega-link" href="#" aria-selected="">{{ name }}</a>
+																</li>
+														{{/children}}
 												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						{% endif %} -->
+							{{/hasMega}}
+
 					</li>
 				{{/desktop}}
 			</ul>
