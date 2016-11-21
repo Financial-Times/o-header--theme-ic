@@ -26,6 +26,7 @@ module.exports = function () {
 				{
 					name: 'Tips & Ideas',
 					url: '#',
+					index: 1,
 					hasMega: true,
 					children: [
 						{name: "All Tips & Ideas"},
@@ -43,6 +44,7 @@ module.exports = function () {
 				{
 					name: 'Shares',
 					url: '#',
+					index: 2,
 					hasMega: true,
 					children: [
 						{name: "All Shares"},
@@ -55,6 +57,7 @@ module.exports = function () {
 				{
 					name: 'Comment',
 					url: '#',
+					index: 3,
 					hasMega: true,
 					children: [
 						{name: "All Comment"},
@@ -72,6 +75,7 @@ module.exports = function () {
 				{
 					name: 'Market Data',
 					url: '#',
+					index: 4,
 					hasMega: true,
 					children: [
 						{name: "All Market Data"},
@@ -88,6 +92,7 @@ module.exports = function () {
 				{
 					name: 'Managing Your Money',
 					url: '#',
+					index: 5,
 					hasMega: true,
 					children: [
 						{name: "All Managing Your Money"},
@@ -104,6 +109,7 @@ module.exports = function () {
 				{
 					name: 'Funds and ETFs',
 					url: '#',
+					index: 6,
 					hasMega: true,
 					children: [
 						{name: "All Funds & ETFs"},
@@ -121,21 +127,18 @@ module.exports = function () {
 				{
 					name: 'Investment Guides',
 					url: '#',
-					hasMega: false,
+					index: 7,
 					children: []
 
 				},
 				{
 					name: 'Alpha',
 					url: '#',
-					hasMega: false,
+					index: 8,
 					children: []
 				}
 			],
 			isSignedIn: false
 		},
-
-		// Drawer
-	//	drawer: drawer()
 	};
 };

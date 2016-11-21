@@ -91,5 +91,66 @@
 		</div>
 	</nav>
 	{{/nav}}
-
 </header>
+
+<!-- Drawer -->
+<div class="o-header__drawer" id="o-header-drawer" data-o-header-drawer="" data-o-header-drawer--no-js="">
+	<div class="o-header__drawer-inner">
+
+		<div class="o-header__drawer-tools">
+			<a class="o-header__drawer-tools-logo" href="/">
+				<span class="o-header__visually-hidden">Investors Chronicle</span>
+			</a>
+			<button type="button" class="o-header__drawer-tools-close" aria-controls="o-header-drawer">
+				<span class="o-header__visually-hidden">Close</span>
+			</button>
+		</div>
+
+		<div class="o-header__drawer-search">
+			<form class="o-header__drawer-search-form" action="/search" role="search" aria-label="Site search">
+				<label class="o-header__visually-hidden" for="o-header-drawer-search-term">Search&hellip;</label>
+				<input class="o-header__drawer-search-term" id="o-header-drawer-search-term" name="q" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search&hellip;"></input>
+				<button class="o-header__drawer-search-submit" type="submit">
+					<span class="o-header__visually-hidden">Search</span>
+				</button>
+			</form>
+		</div>
+		{{#nav}}
+		<nav class="o-header__drawer-menu o-header__drawer-menu--primary" role="navigation" aria-label="Primary navigation">
+			<ul class="o-header__drawer-menu-list">
+				{{#desktop}}
+					<li class="o-header__drawer-menu-item">
+						<div class="o-header__drawer-menu-toggle-wrapper">
+							{{#hasMega}}
+								<button class="o-header__drawer-menu-toggle o-header__drawer-menu-toggle--unselected" aria-controls="o-header-drawer-child-{{index}}">
+									Show more {{ section_name }} links
+								</button>
+							{{/hasMega}}
+							<a class="o-header__drawer-menu-link o-header__drawer-menu-link{{#hasMega}}--parent{{/hasMega}} o-header__drawer-menu-link--unselected" href="#">{{name}}</a>
+						</div>
+						{{#hasMega}}
+							<ul class="o-header__drawer-menu-list o-header__drawer-menu-list--child" id="o-header-drawer-child-{{index}}">
+								{{#children}}
+									<li class="o-header__drawer-menu-item">
+										<a class="o-header__drawer-menu-link o-header__drawer-menu-link--child o-header__drawer-menu-link--unselected" href="#" aria-label="Go to {{name}}">{{name}}</a>
+									</li>
+								{{/children}}
+							</ul>
+						{{/hasMega}}
+					</li>
+				{{/desktop}}
+			</ul>
+		</nav>
+		{{/nav}}
+		<nav class="o-header__drawer-menu o-header__drawer-menu--user" role="navigation" aria-label="User navigation">
+			<ul class="o-header__drawer-menu-list">
+				<li class="o-header__drawer-menu-item">
+					<a class="o-header__drawer-menu-link" href="#">Subscribe</a>
+				</li>
+				<li class="o-header__drawer-menu-item">
+					<a class="o-header__drawer-menu-link o-overlay-trigger js-login-form" id="mobile-signin" href="{{ path('login') }}">Sign In</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
