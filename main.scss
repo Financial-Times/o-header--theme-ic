@@ -1,10 +1,14 @@
-@import "o-colors/main";
+$o-header-is-silent: false;
 
-@if ($o-component-boilerplate-is-silent == false) {
+
+@import "o-header/main";
+@import "src/scss/_variables";
+
+@if ($o-header--theme-ic-is-silent == false) {
 	 .o-component-boilerplate {
 		display: block;
 	}
 
 	// Set to silent again to avoid being output twice
-	$o-component-boilerplate-is-silent: true !global;
+	$o-header--theme-ic-is-silent: true !global;
 }
