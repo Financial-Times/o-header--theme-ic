@@ -14,6 +14,25 @@ module.exports = function () {
 		// Search bar
 		search: true,
 
+		marketDataSections: {
+			name: 'Market Data',
+			url: '#',
+			selected: true,
+			hasMega: true,
+			children: [
+				{name: "All Market Data"},
+				{name: "Equities"},
+				{name: "Portfolio"},
+				{name: "Funds Data"},
+				{name: "Commodities"},
+				{name: "Bonds"},
+				{name: "UK Corporate Bonds & PIBS"},
+				{name: "Forex"},
+				{name: "Economic Calendar"},
+				{name: "World Markets"}
+			]
+		},
+
 		// Navigation bar
 		nav: {
 			mobile: [],
@@ -21,7 +40,6 @@ module.exports = function () {
 				{
 					name: 'Home',
 					url: '#',
-					selected: true
 				},
 				{
 					name: 'Tips & Ideas',
@@ -77,6 +95,7 @@ module.exports = function () {
 					url: '#',
 					index: 4,
 					hasMega: true,
+					selected: true,
 					children: [
 						{name: "All Market Data"},
 						{name: "Equities"},
