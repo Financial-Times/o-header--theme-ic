@@ -2,7 +2,11 @@ $o-header-is-silent: false;
 
 
 @import "o-header/main";
+@import "o-assets/main";
+@import "o-grid/main";
+
 @import "src/scss/_variables";
+@import "src/scss/investors_chronicle_theme.scss";
 
 @if ($o-header--theme-ic-is-silent == false) {
 	 .o-component-boilerplate {
