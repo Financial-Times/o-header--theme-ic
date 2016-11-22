@@ -9,7 +9,7 @@
   ],
   "main": [
     "main.scss",
-		"main.js"
+    "main.js"
   ],
   "dependencies": {
     "o-header": "^6.12.0"
