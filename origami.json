@@ -19,9 +19,18 @@
 		"demos": [
 			{
 				"name": "header",
+				"title": "Main header",
 				"data": "demos/src/mainMenu.js",
 				"template": "demos/src/header.mustache",
-				"description": "Responsive header for the Investor's Chronicle."
+				"description": "Large header for the top of Investor's Chronicle pages"
+			},
+			{
+				"name": "sticky-header",
+				"title": "Slimline sticky header",
+				"data": "demos/src/mainMenu.js",
+				"template": "demos/src/sticky-header.mustache",
+				"description": "This header appears when scrolling down the page",
+				"documentClasses": "demo-sticky"
 			},
 			{
 				"name": "pa11y",
