@@ -1,7 +1,7 @@
-o-component-boilerplate [![Circle CI](https://circleci.com/gh/Financial-Times/o-component-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/o-component-boilerplate/tree/master)
+o-header--theme-ic[![Circle CI](https://circleci.com/gh/Financial-Times/o-header--theme-ic/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/o-header--theme-ic/tree/master)
 =================
 
-_A short description of what this component does._
+This component is a theme for o-header. It includes o-header and then the required CSS to give the Investors Chronicle branding.
 
 
 _A table of contents to help people find things_
@@ -10,40 +10,28 @@ _A table of contents to help people find things_
 	- [Markup](#markup)
 	- [JavaScript](#javascript)
 	- [Sass](#sass)
-- [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
-- [Migration guide](#migration-guide)
 - [Contact](#contact)
 - [Licence](#licence)
 
 ## Usage
-_Whatever usage instructions your component has. We've broken this down by Markup, JavaScript and Sass, but it depends how complex your component is._
+This component includes on o-header as a dependency, so you only need to explicitly include component in your project.
 
 ### Markup
 
-_Common templating can go here, especially if there is only one template, but people can always check the demos for more._
-
-_Remember to start your codeblocks with three backticks and "html" so your markup is syntax highlighted correctly._
-
-```html
-<div data-o-component="o-component-boilerplate" class='o-component-boilerplate'>
-</div>
-```
+There is a lot of markup for this component, an illustrative version of it can be seen in the [demos](http://registry.origami.com/components/o-header--theme-ic).
 
 ### JavaScript
-_Remember to start your codeblocks with three backticks and "js" so your js is syntax highlighted correctly._
-
-_Though it's not practical to repeat every aspect of Origami modules convention for every component, **A LOT** of people get tripped up by modules not auto initialising, so this line (remember to change the `o-component-boilerplate` to your component name) is useful if you have JavaScript:_
-
 No code will run automatically unless you are using the Build Service.
-You must either construct an `o-component-boilerplate` object or fire the `o.DOMContentLoaded` event, which oComponent listens for.
+You must either construct an `oHeader` object or fire the `o.DOMContentLoaded` event, which oComponent listens for.
 
-#### Constructing an o-component-boilerplate
+
+#### Constructing an oHeader object
 
 ```js
-const oComponentBoilerplate = require('o-component-boilerplate');
+const oHeader = require('o-header');
 
-const oComponentBoilerplate = new oComponentBoilerplate();
+oHeader.init();
 ```
 
 #### Firing an oDomContentLoaded event
@@ -55,35 +43,21 @@ document.addEventListener('DOMContentLoaded', function() {
 ```
 
 ### Sass
-_Remember to start your codeblocks with three backticks and "sass" so your markup is syntax highlighted correctly._
 
-_Though it's not practical to repeat every aspect of Origami modules convention for every component, **A LOT** of people get tripped up by silent mode, so this line (remember to change the o-component-boilerplate to your component name) is useful if you have Sass:_
-
-As with all Origami components, o-component-boilerplate has a [silent mode](http://origami.ft.com/docs/syntax/scss/#silent-styles). To use its compiled CSS (rather than using its mixins with your own Sass) set `$o-component-boilerplate-is-silent : false;` in your Sass after you've imported the o-component-boilerplate Sass.
-
-## Troubleshooting
-_This is a good place to put problems that come up repeatedly_
-
-### The thing with the thing isn't working
-Fix it by turning it off and on again
+As with all Origami components, o-header--theme-ic has a [silent mode](http://origami.ft.com/docs/syntax/scss/#silent-styles). To use its compiled CSS (rather than using its mixins with your own Sass) set `$o-o-header--theme-ic-is-silent : false;` in your Sass after you've imported the o-header--theme-ic Sass.
 
 ## Contributing
-If your component is particularly complicated (image sets fall into this category) then a contributing section or even a contributing.md might be useful.
+Please [let the Origami team know](#contact) if you'd like push access to this repository.
+Building Origami components locally all works in the same way:
 
-
-## Migration guide
-_Migration guides are very important! Always include one for major releases. To create a codeblock that has diff highligting, use three backticks followed by the word diff_
-
-### Migrating from 1.X.X to 2.X.X
-
-The 2.0.0 release changes the default behaviour of o-component-boilerplate.
-
-```diff
-<div class="o-component-boilerplate__container">
-- remove this line
-+ add this line
-</div>
-```
+1. Clone this repository
+1. Install the Origami Build Tools globally: `$ npm install -g origami-build-tools`
+1. On the command line, in the o-header--theme-ic directory run:
+	1. `$ obt install` // this will install all of this component's dependencies including bower and npm if you don't have them
+	1. You may need to add a .bowerrc file to tell bower where to look for Origami dependencies. OBT will let you know if you need to do this and how to do it.
+	1. `$ obt build` // this will build all of this component's dependencies
+	1. `$ obt demo --runServer --watch` // this will run all of this projects demos, which you'll now be able to see in a browser
+1. You can now work on the Sass, JS, or demos of this project and see the results
 
 ---
 
