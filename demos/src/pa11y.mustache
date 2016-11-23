@@ -1,9 +1,190 @@
-<div>
-	<h1>Basic Demo</h1>
-	<div class="o-component-boilerplate" data-o-component="o-component-boilerplate"></div>
-</div>
+<header class="o-header" data-o-component="o-header" data-o-header--no-js="">
+	<div class="o-header__row o-header__top">
+		<div class="o-header__container">
+			<div class="o-header__top-wrapper">
+				<div class="o-header__top-column o-header__top-column--left">
+					<a href="#o-header-drawer" class="o-header__top-link o-header__top-link--menu" aria-controls="o-header-drawer">
+						<span class="o-header__top-link-label">Menu</span>
+					</a>
+					<a href="#o-header-search" class="o-header__top-link o-header__top-link--search" aria-controls="o-header-search-js">
+						<span class="o-header__top-link-label">Search</span>
+					</a>
+				</div>
+				<div class="o-header__top-column o-header__top-column--center">
+					<a class="o-header__top-logo" href="/" title="Go to Investors Chronicle homepage">
+						<span class="o-header__visually-hidden">Investors Chronicle</span>
+					</a>
+				</div>
+				<div class="o-header__top-column o-header__top-column--right">
+				</div>
+			</div>
+		</div>
+	</div>
 
-<div>
-	<h1>Basic Demo:hover</h1>
-	<div class="o-component-boilerplate" data-o-component="o-component-boilerplate"></div>
+	<!-- To support both core and enhanced, duplicating the search row is necessary to avoid it flashing in enhanced -->
+	<!-- Pick only one of the two <div> if you don't need to support both core and enhanced -->
+	<div id="o-header-search" class="o-header__row o-header__search o--if-no-js" role="search">
+		<div class="o-header__container">
+			<form class="o-header__search-form" action="/search" role="search" aria-label="Site search">
+				<label class="o-header__visually-hidden" for="o-header-search-term">Search&hellip;</label>
+				<input class="o-header__search-term" id="o-header-search-term" name="q" type="text" placeholder="Search&hellip;"></input>
+				<button class="o-header__search-submit" type="submit">
+					Search
+				</button>
+			</form>
+		</div>
+	</div>
+	<div id="o-header-search-js" class="o-header__row o-header__search" role="search" data-o-header-search="">
+		<div class="o-header__container">
+			<form class="o-header__search-form" action="/search" role="search" aria-label="Site search">
+				<label class="o-header__visually-hidden" for="o-header-search-term-js">Search&hellip;</label>
+				<input class="o-header__search-term" id="o-header-search-term-js" name="q" type="text" placeholder="Search&hellip;"></input>
+				<button class="o-header__search-submit" type="submit">
+					Search
+				</button>
+				<button class="o-header__search-close o--if-js" type="button" aria-controls="o-header-search-js">
+					<span class="o-header__visually-hidden">Close</span>
+				</button>
+			</form>
+		</div>
+	</div>
+	{{#nav}}
+
+	<nav id="o-header-nav-desktop" class="o-header__row o-header__nav o-header__nav--desktop" role="navigation" aria-label="Main navigation">
+		<div class="o-header__container">
+			<ul class="o-header__nav-list o-header__nav-list--left">
+				{{#desktop}}
+					<li class="o-header__nav-item">
+						<a class="o-header__nav-link o-header__nav-link--primary" href="{{href}}" aria-selected="{{selected}}" id="o-header-link-{{index}}" {{#hasMega}}aria-controls="o-header-mega-{{index}}"{{/hasMega}}>{{name}}</a>
+						{{#hasMega}}
+
+							<div class="o-header__mega" id="o-header-mega-{{index}}" role="group" aria-labelledby="o-header-link-{{index}}" data-o-header-mega="{{index}}">
+								<div class="o-header__container o-header__container--mega">
+									<div class="o-header__mega-wrapper">
+										<div class="o-header__mega-column o-header__mega-column--subsections">
+											<div class="o-header__mega-content">
+												<a class='o-header__mega-link o-header__mega-link--large' href='#'>{{name}}</a>
+												<ul class="o-header__mega-list">
+														{{#children}}
+																<li class="o-header__mega-item">
+																	<a class="o-header__mega-link" href="#" aria-selected="">{{ name }}</a>
+																</li>
+														{{/children}}
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{{/hasMega}}
+
+					</li>
+				{{/desktop}}
+			</ul>
+			<ul class="o-header__nav-list o-header__nav-list--right">
+				<li class="o-header__nav-item">
+					<a class="o-header__nav-link o-header__nav-link--utility o-overlay-trigger js-login-form" id="desktop-signin" href="{{ path('login') }}">Sign In</a>
+				</li>
+				<li class="o-header__nav-item">
+					<a class="o-header__nav-link o-header__nav-link--utility" href="/products">Subscribe</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	{{/nav}}
+</header>
+
+{{#marketDataSections}}
+<div class="o-header__subnav" role="navigation" aria-label="Sub navigation" data-o-header-subnav="">
+	<div class="o-header__container">
+		<div class="o-header__subnav-wrap-outside">
+			<div class="o-header__subnav-wrap-inside" data-o-header-subnav-wrapper="">
+				<div class="o-header__subnav-content">
+					<ol class="o-header__subnav-list o-header__subnav-list--breadcrumb" aria-label="Breadcrumb">
+						<li class="o-header__subnav-item">
+							<a class="o-header__subnav-link" href="#">
+								{{name}}
+							</a>
+						</li>
+					</ol>
+
+					<ul class="o-header__subnav-list o-header__subnav-list--children" aria-label="Subsections">
+						{{#children}}
+						<li class="o-header__subnav-item">
+							<a class="o-header__subnav-link" href="#">
+								{{name}}
+							</a>
+						</li>
+						{{/children}}
+					</ul>
+				</div>
+			</div>
+			<button class="o-header__subnav-button o-header__subnav-button--left" aria-hidden="true" disabled title='srcoll list left'></button>
+			<button class="o-header__subnav-button o-header__subnav-button--right" aria-hidden="true" disabled title='srcoll list right'></button>
+		</div>
+	</div>
+</div>
+{{/marketDataSections}}
+
+
+<!-- Drawer -->
+<div class="o-header__drawer" id="o-header-drawer" data-o-header-drawer="" data-o-header-drawer--no-js="">
+	<div class="o-header__drawer-inner">
+
+		<div class="o-header__drawer-tools">
+			<a class="o-header__drawer-tools-logo" href="/">
+				<span class="o-header__visually-hidden">Investors Chronicle</span>
+			</a>
+			<button type="button" class="o-header__drawer-tools-close" aria-controls="o-header-drawer">
+				<span class="o-header__visually-hidden">Close</span>
+			</button>
+		</div>
+
+		<div class="o-header__drawer-search">
+			<form class="o-header__drawer-search-form" action="/search" role="search" aria-label="Site search">
+				<label class="o-header__visually-hidden" for="o-header-drawer-search-term">Search&hellip;</label>
+				<input class="o-header__drawer-search-term" id="o-header-drawer-search-term" name="q" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search&hellip;"></input>
+				<button class="o-header__drawer-search-submit" type="submit">
+					<span class="o-header__visually-hidden">Search</span>
+				</button>
+			</form>
+		</div>
+		{{#nav}}
+		<nav class="o-header__drawer-menu o-header__drawer-menu--primary" role="navigation" aria-label="Primary navigation">
+			<ul class="o-header__drawer-menu-list">
+				{{#desktop}}
+					<li class="o-header__drawer-menu-item">
+						<div class="o-header__drawer-menu-toggle-wrapper">
+							{{#hasMega}}
+								<button class="o-header__drawer-menu-toggle o-header__drawer-menu-toggle--unselected" aria-controls="o-header-drawer-child-{{index}}">
+									Show more {{ section_name }} links
+								</button>
+							{{/hasMega}}
+							<a class="o-header__drawer-menu-link o-header__drawer-menu-link{{#hasMega}}--parent{{/hasMega}} o-header__drawer-menu-link--unselected" href="#">{{name}}</a>
+						</div>
+						{{#hasMega}}
+							<ul class="o-header__drawer-menu-list o-header__drawer-menu-list--child" id="o-header-drawer-child-{{index}}">
+								{{#children}}
+									<li class="o-header__drawer-menu-item">
+										<a class="o-header__drawer-menu-link o-header__drawer-menu-link--child o-header__drawer-menu-link--unselected" href="#" aria-label="Go to {{name}}">{{name}}</a>
+									</li>
+								{{/children}}
+							</ul>
+						{{/hasMega}}
+					</li>
+				{{/desktop}}
+			</ul>
+		</nav>
+		{{/nav}}
+		<nav class="o-header__drawer-menu o-header__drawer-menu--user" role="navigation" aria-label="User navigation">
+			<ul class="o-header__drawer-menu-list">
+				<li class="o-header__drawer-menu-item">
+					<a class="o-header__drawer-menu-link" href="#">Subscribe</a>
+				</li>
+				<li class="o-header__drawer-menu-item">
+					<a class="o-header__drawer-menu-link o-overlay-trigger js-login-form" id="mobile-signin" href="{{ path('login') }}">Sign In</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </div>
