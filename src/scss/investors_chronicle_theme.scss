@@ -1,367 +1,369 @@
-.o-grid-snappy .o-header__container,
-.o-header__container--snappy {
-    @include oGridRespondTo(M) {
-        max-width: 645px;
-    }
-
-    @include oGridRespondTo(L) {
-        max-width: 960px;
-    }
-
-    @include oGridRespondTo(XL) {
-        max-width: 1275px;
-    }
-}
-
-.o-header,
-.o-header__nav-link--highlight,
-.o-header__nav-link[aria-selected=true],
-.o-header__drawer a,
-.o-header__drawer-editions-link[aria-selected=true] {
-    color: $c-header-text;
-}
-
-.o-header {
-    background-color: $c-header-background;
-
-    &__container {
-        z-index: 12;
-
-        @include oGridRespondTo(L) {
-            padding: 0 oGridGutter(L);
-        }
-    }
-
-    &__top-column--left {
-        width: 12.5%;
-
-        @include oGridRespondTo(XL) {
-            width: 10%;
-        }
-    }
-
-    &__top-column--center {
-        text-align: left;
-    }
-
-    &__top-column--right {
-        width: 25%;
-
-        @include oGridRespondTo(L) {
-            width: 28%;
-        }
-
-        @include oGridRespondTo(XL) {
-            width: 23%;
-        }
-    }
-
-    &__top-logo {
-        width: 82px;
-        height: 25px;
-        margin: 16px 0;
-        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.svg", 'o-header--theme-ic'));
-        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.png", 'investors-chronicle'))\9;
-        background-position: 0 0;
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        @include oGridRespondTo(M) {
-            width: 132px;
-            height: 40px;
-        }
-
-        @include oGridRespondTo(L) {
-            width: 247px;
-            height: 75px;
-        }
-
-        .o-header--sticky & {
-            @include oGridRespondTo(L) {
-                width: 132px;
-                height: 40px;
-            }
-        }
-    }
-
-    &__nav {
-        @include font-size(12);
-        font-family: $font-sans-serif;
-    }
-
-    &__nav--desktop {
-        display: none;
-
-        @include oGridRespondTo(L) {
-            display: block;
-
-            .o-header__container {
-                z-index: 14;
-            }
-        }
-    }
-
-    &__nav-link {
-        &:hover {
-            color: $c-header-link-hover;
-        }
-
-        &:hover:after {
-            background-image: none;
-            background-color: $c-header-link-hover;
-        }
-
-        &--highlight:after,
-        &[aria-selected=true]:after {
-            background-image: none;
-            background-color: $white;
-        }
-    }
-
-    &__row {
-        border-color: $c-header-border;
-    }
-
-    &__top-link {
-        &:hover {
-            color: $c-header-menu-link;
-        }
-    }
-
-    &__top-link-label {
-        font-family: $font-sans-serif;
-    }
-
-    &__top-link--search:before {
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=40')\9;
-    }
-
-    &__top-link--menu:before {
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:hamburger?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:hamburger?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=40')\9;
-    }
-}
-
-.o-header__top-link--menu + .o-header__top-link--search {
-    @include oGridRespondTo(L) {
-        display: inline-block;
-        margin: 10px;
-    }
-}
-
-/* sub menu */
-.o-header__container--mega {
-    min-width: 320px;
-}
-
-.o-header__mega {
-    background-color: $c-header-menu-background;
-    border-color: $c-header-border;
-    @include font-size(18);
-    font-family: $font-list-header;
-    left: oGridGutter(L);
-    right: oGridGutter(L);
-    padding: 8px 0 18px;
-    width: 47%;
-
-    &-wrapper {
-        margin: 0;
-        border-spacing: 0;
-    }
-
-    &-item {
-        line-height: 2;
-    }
-
-    &-link {
-        color: $c-header-menu-link;
-        @include font-size(16);
-    }
-
-    &-link:hover {
-        text-decoration: none;
-        color: $c-header-menu-link-hover;
-    }
-
-    &-link--large {
-        display: block;
-        font-family: $font-header;
-        @include font-size(18);
-        line-height: 2;
-        margin-bottom: 5px;
-        padding-bottom: 5px;
-        border-bottom: 1px solid $c-header-border;
-    }
-}
-
-.o-header__mega-column--subsections .o-header__mega-item:first-child {
-    font-weight: normal;
-}
-
-/* subnav */
-.o-header__subnav {
-    display: block;
-    @include font-size(12);
-    background-color: $c-header-subnav-background;
-
-    &-link {
-        color: $c-header-subnav-link;
-
-        &:hover {
-            color: $c-header-subnav-link;
-        }
-
-        .o-header__subnav-list--breadcrumb & {
-            color: $c-header-subnav-link;
-        }
-
-        &--highlight:after,
-        &[aria-selected=true]:after,
-        &:hover:after {
-            background-image: none;
-            background-color: $c-header-link-hover;
-        }
-    }
-
-    &-list--breadcrumb .o-header__subnav-item:before {
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=15')\9;
-    }
-
-    &-button {
-        background-color: $c-subnav-button;
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=25')\9;
-
-        &:hover {
-            background-color: $c-subnav-button;
-        }
-    }
-}
-
-/* drawer menu */
-.o-header__drawer {
-    background-color: $c-header-background;
-    font-family: $font-sans-serif;
-
-    &-tools-close {
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=invchron&tint=%23FFF,%23FFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=invchron&tint=%23FFF,%23FFF&format=png&width=40')\9;
-        opacity: 1;
-    }
-
-    &-tools-logo {
-        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.svg", 'o-header--theme-ic'));
-        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.png", 'investors-chronicle'))\9;
-        background-size: contain;
-        background-position: 0 0;
-        width: 82px;
-        height: 25px;
-
-        @include oGridRespondTo(M) {
-            width: 132px;
-            height: 40px;
-        }
-    }
-
-    &-menu-toggle {
-        border-left: 1px solid $c-header-border;
-    }
-
-    &-menu-toggle--unselected {
-        background: $c-header-toggle;
-
-        &:before {
-            background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=invchron&tint=%23FFF,%23FFF&format=svg');
-            background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=invchron&tint=%23FFF,%23FFF&format=png&width=25')\9;
-        }
-    }
-
-    &-menu-item {
-        border-bottom: 1px solid $c-header-border;
-
-        .o-header__drawer-menu-list--child & {
-            border: 0;
-        }
-    }
-
-    &-menu-link {
-        &:hover {
-            color: $c-header-link-hover;
-        }
-    }
-
-    &-menu-link--selected {
-        background: 0;
-    }
-
-    &-menu-link--parent,
-    &-menu-link-- {
-        @include font-size(16);
-        text-transform: uppercase;
-    }
-
-    &-menu-link--child {
-        @include font-size(14);
-    }
-
-    &-menu--user {
-        background: 0;
-        border-top: 0;
-    }
-
-    &-search-submit {
-        background-color: $c-header-search-button-background;
-    }
-}
-
-.o-header__search {
-    background-color: $c-header-background;
-
-    &-submit {
-        background-color: $c-header-search-button-background;
-        border-color: $c-header-search-button-border;
-        font-family: $font-sans-serif;
-
-        .o-hoverable-on &:not([disabled]):hover {
-            background-color: $c-header-search-button-background-hover;
-						border-color: $c-header-search-button-border;
-
-        }
-    }
-
-    &-term {
-        border-color: transparent;
-        font-family: $font-sans-serif;
-
-        &:focus {
-            border-color: #333333;
-        }
-
-    }
-}
-
-[data-o-header-drawer--js] .o-header__drawer-menu-list--child[aria-hidden=false],
-[aria-expanded=true]+.o-header__drawer-menu-link {
-    background-color: $c-header-drawer-background;
-}
-/** header promo **/
-.header-promo {
-    &__link {
-        text-decoration: none;
-
-        &:hover {
-            .text-highlighted {
-                background-color: $c-header-promo-link-background-hover;
-                color: $c-header-promo-link-text-hover;
-            }
-        }
-    }
-
-    &__image-container {
-        .o-header--sticky & {
-            display: none;
-        }
-    }
+@mixin oHeaderThemeInvestorsChronicle {
+	.o-grid-snappy .o-header__container,
+	.o-header__container--snappy {
+	    @include oGridRespondTo(M) {
+	        max-width: 645px;
+	    }
+
+	    @include oGridRespondTo(L) {
+	        max-width: 960px;
+	    }
+
+	    @include oGridRespondTo(XL) {
+	        max-width: 1275px;
+	    }
+	}
+
+	.o-header,
+	.o-header__nav-link--highlight,
+	.o-header__nav-link[aria-selected=true],
+	.o-header__drawer a,
+	.o-header__drawer-editions-link[aria-selected=true] {
+	    color: $c-header-text;
+	}
+
+	.o-header {
+	    background-color: $c-header-background;
+
+	    &__container {
+	        z-index: 12;
+
+	        @include oGridRespondTo(L) {
+	            padding: 0 oGridGutter(L);
+	        }
+	    }
+
+	    &__top-column--left {
+	        width: 12.5%;
+
+	        @include oGridRespondTo(XL) {
+	            width: 10%;
+	        }
+	    }
+
+	    &__top-column--center {
+	        text-align: left;
+	    }
+
+	    &__top-column--right {
+	        width: 25%;
+
+	        @include oGridRespondTo(L) {
+	            width: 28%;
+	        }
+
+	        @include oGridRespondTo(XL) {
+	            width: 23%;
+	        }
+	    }
+
+	    &__top-logo {
+	        width: 82px;
+	        height: 25px;
+	        margin: 16px 0;
+	        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.svg", 'o-header--theme-ic'));
+	        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.png", 'investors-chronicle'))\9;
+	        background-position: 0 0;
+	        background-repeat: no-repeat;
+	        background-size: contain;
+
+	        @include oGridRespondTo(M) {
+	            width: 132px;
+	            height: 40px;
+	        }
+
+	        @include oGridRespondTo(L) {
+	            width: 247px;
+	            height: 75px;
+	        }
+
+	        .o-header--sticky & {
+	            @include oGridRespondTo(L) {
+	                width: 132px;
+	                height: 40px;
+	            }
+	        }
+	    }
+
+	    &__nav {
+	        @include font-size(12);
+	        font-family: $font-sans-serif;
+	    }
+
+	    &__nav--desktop {
+	        display: none;
+
+	        @include oGridRespondTo(L) {
+	            display: block;
+
+	            .o-header__container {
+	                z-index: 14;
+	            }
+	        }
+	    }
+
+	    &__nav-link {
+	        &:hover {
+	            color: $c-header-link-hover;
+	        }
+
+	        &:hover:after {
+	            background-image: none;
+	            background-color: $c-header-link-hover;
+	        }
+
+	        &--highlight:after,
+	        &[aria-selected=true]:after {
+	            background-image: none;
+	            background-color: $white;
+	        }
+	    }
+
+	    &__row {
+	        border-color: $c-header-border;
+	    }
+
+	    &__top-link {
+	        &:hover {
+	            color: $c-header-menu-link;
+	        }
+	    }
+
+	    &__top-link-label {
+	        font-family: $font-sans-serif;
+	    }
+
+	    &__top-link--search:before {
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=40')\9;
+	    }
+
+	    &__top-link--menu:before {
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:hamburger?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:hamburger?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=40')\9;
+	    }
+	}
+
+	.o-header__top-link--menu + .o-header__top-link--search {
+	    @include oGridRespondTo(L) {
+	        display: inline-block;
+	        margin: 10px;
+	    }
+	}
+
+	/* sub menu */
+	.o-header__container--mega {
+	    min-width: 320px;
+	}
+
+	.o-header__mega {
+	    background-color: $c-header-menu-background;
+	    border-color: $c-header-border;
+	    @include font-size(18);
+	    font-family: $font-list-header;
+	    left: oGridGutter(L);
+	    right: oGridGutter(L);
+	    padding: 8px 0 18px;
+	    width: 47%;
+
+	    &-wrapper {
+	        margin: 0;
+	        border-spacing: 0;
+	    }
+
+	    &-item {
+	        line-height: 2;
+	    }
+
+	    &-link {
+	        color: $c-header-menu-link;
+	        @include font-size(16);
+	    }
+
+	    &-link:hover {
+	        text-decoration: none;
+	        color: $c-header-menu-link-hover;
+	    }
+
+	    &-link--large {
+	        display: block;
+	        font-family: $font-header;
+	        @include font-size(18);
+	        line-height: 2;
+	        margin-bottom: 5px;
+	        padding-bottom: 5px;
+	        border-bottom: 1px solid $c-header-border;
+	    }
+	}
+
+	.o-header__mega-column--subsections .o-header__mega-item:first-child {
+	    font-weight: normal;
+	}
+
+	/* subnav */
+	.o-header__subnav {
+	    display: block;
+	    @include font-size(12);
+	    background-color: $c-header-subnav-background;
+
+	    &-link {
+	        color: $c-header-subnav-link;
+
+	        &:hover {
+	            color: $c-header-subnav-link;
+	        }
+
+	        .o-header__subnav-list--breadcrumb & {
+	            color: $c-header-subnav-link;
+	        }
+
+	        &--highlight:after,
+	        &[aria-selected=true]:after,
+	        &:hover:after {
+	            background-image: none;
+	            background-color: $c-header-link-hover;
+	        }
+	    }
+
+	    &-list--breadcrumb .o-header__subnav-item:before {
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=15')\9;
+	    }
+
+	    &-button {
+	        background-color: $c-subnav-button;
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=25')\9;
+
+	        &:hover {
+	            background-color: $c-subnav-button;
+	        }
+	    }
+	}
+
+	/* drawer menu */
+	.o-header__drawer {
+	    background-color: $c-header-background;
+	    font-family: $font-sans-serif;
+
+	    &-tools-close {
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=invchron&tint=%23FFF,%23FFF&format=svg');
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=invchron&tint=%23FFF,%23FFF&format=png&width=40')\9;
+	        opacity: 1;
+	    }
+
+	    &-tools-logo {
+	        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.svg", 'o-header--theme-ic'));
+	        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.png", 'investors-chronicle'))\9;
+	        background-size: contain;
+	        background-position: 0 0;
+	        width: 82px;
+	        height: 25px;
+
+	        @include oGridRespondTo(M) {
+	            width: 132px;
+	            height: 40px;
+	        }
+	    }
+
+	    &-menu-toggle {
+	        border-left: 1px solid $c-header-border;
+	    }
+
+	    &-menu-toggle--unselected {
+	        background: $c-header-toggle;
+
+	        &:before {
+	            background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=invchron&tint=%23FFF,%23FFF&format=svg');
+	            background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=invchron&tint=%23FFF,%23FFF&format=png&width=25')\9;
+	        }
+	    }
+
+	    &-menu-item {
+	        border-bottom: 1px solid $c-header-border;
+
+	        .o-header__drawer-menu-list--child & {
+	            border: 0;
+	        }
+	    }
+
+	    &-menu-link {
+	        &:hover {
+	            color: $c-header-link-hover;
+	        }
+	    }
+
+	    &-menu-link--selected {
+	        background: 0;
+	    }
+
+	    &-menu-link--parent,
+	    &-menu-link-- {
+	        @include font-size(16);
+	        text-transform: uppercase;
+	    }
+
+	    &-menu-link--child {
+	        @include font-size(14);
+	    }
+
+	    &-menu--user {
+	        background: 0;
+	        border-top: 0;
+	    }
+
+	    &-search-submit {
+	        background-color: $c-header-search-button-background;
+	    }
+	}
+
+	.o-header__search {
+	    background-color: $c-header-background;
+
+	    &-submit {
+	        background-color: $c-header-search-button-background;
+	        border-color: $c-header-search-button-border;
+	        font-family: $font-sans-serif;
+
+	        .o-hoverable-on &:not([disabled]):hover {
+	            background-color: $c-header-search-button-background-hover;
+							border-color: $c-header-search-button-border;
+
+	        }
+	    }
+
+	    &-term {
+	        border-color: transparent;
+	        font-family: $font-sans-serif;
+
+	        &:focus {
+	            border-color: #333333;
+	        }
+
+	    }
+	}
+
+	[data-o-header-drawer--js] .o-header__drawer-menu-list--child[aria-hidden=false],
+	[aria-expanded=true]+.o-header__drawer-menu-link {
+	    background-color: $c-header-drawer-background;
+	}
+	/** header promo **/
+	.header-promo {
+	    &__link {
+	        text-decoration: none;
+
+	        &:hover {
+	            .text-highlighted {
+	                background-color: $c-header-promo-link-background-hover;
+	                color: $c-header-promo-link-text-hover;
+	            }
+	        }
+	    }
+
+	    &__image-container {
+	        .o-header--sticky & {
+	            display: none;
+	        }
+	    }
+	}
 }

@@ -1,5 +1,4 @@
 @import "o-header/main";
-@include oHeader();
 
 @import "o-assets/main";
 @import "o-grid/main";
@@ -8,10 +7,9 @@
 @import "src/scss/investors_chronicle_theme.scss";
 
 @if ($o-header--theme-ic-is-silent == false) {
-	 .o-component-boilerplate {
-		display: block;
-	}
-
+	@include oHeader();
+	@include oHeaderThemeInvestorsChronicle;
+	
 	// Set to silent again to avoid being output twice
 	$o-header--theme-ic-is-silent: true !global;
 }
