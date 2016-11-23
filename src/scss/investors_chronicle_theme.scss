@@ -133,13 +133,13 @@
     }
 
     &__top-link--search:before {
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=png&width=40')\9;
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=40')\9;
     }
 
     &__top-link--menu:before {
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:hamburger?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:hamburger?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=png&width=40')\9;
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:hamburger?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:hamburger?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=40')\9;
     }
 }
 
@@ -225,14 +225,14 @@
     }
 
     &-list--breadcrumb .o-header__subnav-item:before {
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=png&width=15')\9;
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=15')\9;
     }
 
     &-button {
         background-color: $c-subnav-button;
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=png&width=25')\9;
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=svg');
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?source=invchron&tint=%23FFFFFF,%23FFFFFF&format=png&width=25')\9;
 
         &:hover {
             background-color: $c-subnav-button;
@@ -246,8 +246,8 @@
     font-family: $font-sans-serif;
 
     &-tools-close {
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=o-icons&tint=%23FFF,%23FFF&format=svg');
-        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=o-icons&tint=%23FFF,%23FFF&format=png&width=40')\9;
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=invchron&tint=%23FFF,%23FFF&format=svg');
+        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=invchron&tint=%23FFF,%23FFF&format=png&width=40')\9;
         opacity: 1;
     }
 
@@ -273,8 +273,8 @@
         background: $c-header-toggle;
 
         &:before {
-            background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=o-icons&tint=%23FFF,%23FFF&format=svg');
-            background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=o-icons&tint=%23FFF,%23FFF&format=png&width=25')\9;
+            background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=invchron&tint=%23FFF,%23FFF&format=svg');
+            background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=invchron&tint=%23FFF,%23FFF&format=png&width=25')\9;
         }
     }
 
