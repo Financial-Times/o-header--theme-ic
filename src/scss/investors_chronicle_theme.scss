@@ -152,6 +152,9 @@
 
 	    &__top-link-label {
 	        font-family: $font-sans-serif;
+			@include oGridRespondTo(L) {
+				display: block;
+			}
 	    }
 
 	    &__top-link--search:before {
