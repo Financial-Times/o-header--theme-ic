@@ -82,12 +82,50 @@
 				{{/desktop}}
 			</ul>
 			<ul class="o-header__nav-list o-header__nav-list--right">
-				<li class="o-header__nav-item">
-					<a class="o-header__nav-link o-header__nav-link--utility o-overlay-trigger js-login-form" id="desktop-signin" href="{{ path('login') }}">Sign In</a>
-				</li>
-				<li class="o-header__nav-item">
-					<a class="o-header__nav-link o-header__nav-link--utility" href="/products">Subscribe</a>
-				</li>
+                {{#loggedin}}
+                    <li class="o-header__nav-item">
+                        <a class="o-header__nav-link o-header__nav-link--utility" id="desktop-signin" href="#">My Account</a>
+                        <div class="o-header__mega" id="o-header-mega-8" role="group" aria-labelledby="o-header-link-8" data-o-header-mega="8">
+                            <div class="o-header__container o-header__container--mega">
+                                <div class="o-header__mega-wrapper">
+                                    <div class="o-header__mega-column o-header__mega-column--subsections">
+                                        <div class="o-header__mega-content">
+                                            <ul class="o-header__mega-list">
+                                                <li class="o-header__mega-item">
+                                                    <a class="o-header__mega-link" href="#" aria-selected="">My Details</a>
+                                                </li>
+                                                <li class="o-header__mega-item">
+                                                    <a class="o-header__mega-link" href="#" aria-selected="">My Products</a>
+                                                </li>
+                                                <li class="o-header__mega-item">
+                                                    <a class="o-header__mega-link" href="#" aria-selected="">Email Alerts</a>
+                                                </li>
+                                                <li class="o-header__mega-item">
+                                                    <a class="o-header__mega-link" href="#" aria-selected="">Newsletters</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="o-header__nav-item">
+                        <a class="o-header__nav-link o-header__nav-link--utility" href="#">Subscribe</a>
+                    </li>
+                    <li class="o-header__nav-item">
+                        <a class="o-header__nav-link o-header__nav-link--utility" id="desktop-my-portfolio" href="#">My Portfolio</a>
+                    </li>
+                    <li class="o-header__nav-item">
+                        <a class="o-header__nav-link o-header__nav-link--utility" id="desktop-signin" href="#">Sign out</a>
+                    </li>
+                {{/loggedin}}
+                <li class="o-header__nav-item">
+                    <a class="o-header__nav-link o-header__nav-link--utility o-overlay-trigger js-login-form" id="desktop-signin" href="#">Sign In</a>
+                </li>
+                <li class="o-header__nav-item">
+                    <a class="o-header__nav-link o-header__nav-link--utility" href="#">Subscribe</a>
+                </li>
 			</ul>
 		</div>
 	</nav>

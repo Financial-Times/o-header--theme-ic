@@ -61,8 +61,8 @@
 	        width: 82px;
 	        height: 25px;
 	        margin: 16px 0;
-	        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.svg", 'o-header--theme-ic'));
-	        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.png", 'investors-chronicle'))\9;
+			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fnew.investorschronicle.co.uk%2Fbundles%2Fapp%2Fimages%2Flogo-investors-chronicle.svg?source=invchron&fit=cover&format=svg&quality=lossless');
+			background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fnew.investorschronicle.co.uk%2Fbundles%2Fapp%2Fimages%2Flogo-investors-chronicle.svg?source=invchron&width=247&height=75&fit=cover&format=png&quality=high')\9;
 	        background-position: 0 0;
 	        background-repeat: no-repeat;
 	        background-size: contain;
@@ -119,6 +119,27 @@
 	        }
 	    }
 
+		/* my account dropdown */
+		&__nav-list--right {
+			.o-header__nav-item {
+				position: relative;
+			}
+
+			.o-header__mega {
+				left: 0;
+				right: auto;
+				width: auto;
+			}
+
+			.o-header__mega-column--subsections .o-header__mega-list {
+				columns: 1;
+			}
+
+			.o-header__container {
+				min-width: 196px;
+			}
+		}
+
 	    &__row {
 	        border-color: $c-header-border;
 	    }
@@ -131,6 +152,9 @@
 
 	    &__top-link-label {
 	        font-family: $font-sans-serif;
+			@include oGridRespondTo(L) {
+				display: block;
+			}
 	    }
 
 	    &__top-link--search:before {
@@ -253,8 +277,8 @@
 	    }
 
 	    &-tools-logo {
-	        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.svg", 'o-header--theme-ic'));
-	        background-image: url(oAssetsResolve("src/img/logo-investors-chronicle.png", 'investors-chronicle'))\9;
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fnew.investorschronicle.co.uk%2Fbundles%2Fapp%2Fimages%2Flogo-investors-chronicle.svg?source=invchron&fit=cover&format=svg&quality=lossless');
+	        background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fnew.investorschronicle.co.uk%2Fbundles%2Fapp%2Fimages%2Flogo-investors-chronicle.svg?source=invchron&width=82&height=25&fit=cover&format=png&quality=high')\9;
 	        background-size: contain;
 	        background-position: 0 0;
 	        width: 82px;
