@@ -1,5 +1,7 @@
-o-header--theme-ic[![Circle CI](https://circleci.com/gh/Financial-Times/o-header--theme-ic/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/o-header--theme-ic/tree/master)
+This component is now deprecated
 =================
+
+o-header--theme-ic
 
 This component is a theme for o-header. It includes o-header and then the required CSS to give the Investors Chronicle branding.
 
